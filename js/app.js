@@ -53,13 +53,20 @@ const addTask = function(){
 }
 // Editing Tasks 
 const editTask = function(){
-    console.log("Edit taks ...");
+    let listItem = this.parentNode;
+    let editInput = listItem.querySelector("input[type=text]");
+    let label = listItem.querySelector("label");
 
+    if(listItem.classList.contains("editMode")){
+        label.innerText = editInput.value;
+    }else{
+        editInput.value = label.innerText;
+    }
+
+listItem.classList.toggle("editMode");
 }
 //Deleting Tasks
 const deleteTask = function(){
-
-    console.log("Delete taks ...");
     let listItem = this.parentNode;
     let ul = listItem.parentNode;
 
@@ -87,6 +94,7 @@ const completedTask = function (){
 
 // Event handling
 addButton.onclick = addTask;
+
 //remove Items
 
 
