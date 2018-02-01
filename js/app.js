@@ -1,6 +1,6 @@
 //Global variables
 let newTask = document.getElementById("new-task"); // adding new task
-let taskList = document.getElementById("incomplete-tasks"); // listing tasks that are not complete 
+let incompleteTaskHolder = document.getElementById("incomplete-tasks"); // listing tasks that are not complete 
 let addButton = document.getElementsByTagName("button")[0]; // adding task button
 let completedTaskHolder = document.getElementById("completed-tasks"); // listing completed task
 
@@ -45,7 +45,7 @@ const addTask = function(){
     console.log("Add taks ...");
     // calling newTaskElements function
     let listItem = newTaskElements(newTask.value); // TODO: 
-    taskList.appendChild(listItem);
+    incompleteTaskHolder.appendChild(listItem);
     bindEvents(listItem,completedTask);
 
     
@@ -72,7 +72,7 @@ const deleteTask = function(){
 const taskIncomplete = function(){
     console.log("task Incomplete ...");
     let list = this.parentNode;
-    taskList.appendChild(list);
+    incompleteTaskHolder.appendChild(list);
     bindEvents(list,completedTask);
 }
 //Completed taks
@@ -106,8 +106,8 @@ const bindEvents = function(taskEventItem,checkboxEventHandler){
 }
 
 //
-for (let i = 0; i<taskList.children.length; i++){
-    bindEvents(taskList.children[i],completedTask);
+for (let i = 0; i<incompleteTaskHolder.children.length; i++){
+    bindEvents(incompleteTaskHolder.children[i],completedTask);
 }
 
 //
