@@ -47,6 +47,7 @@ const addTask = function(){
     let listItem = newTaskElements(newTask.value);  
     incompleteTaskHolder.appendChild(listItem);
     bindEvents(listItem,completedTask);
+    newTask.value = "";
 
     
 
