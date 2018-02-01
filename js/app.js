@@ -42,12 +42,21 @@ const newTaskElements = function(task){
 
 // Adding Tasks to the App
 const addTask = function(){
+    if(newTask.value === null || newTask.value === ""){
+        let err = document.getElementById("validate");
+        err.innerText = "Empty tasks cannot be added";
+    } else{
+        // calling newTaskElements function
+        let listItem = newTaskElements(newTask.value);  
+        incompleteTaskHolder.appendChild(listItem);
+        bindEvents(listItem,completedTask);
+        
+        newTask.value = "";
+        err.innerText = "successfuuly added";
+
+    }
+    
    
-    // calling newTaskElements function
-    let listItem = newTaskElements(newTask.value);  
-    incompleteTaskHolder.appendChild(listItem);
-    bindEvents(listItem,completedTask);
-    newTask.value = "";
 
     
 
@@ -94,7 +103,8 @@ const completedTask = function (){
 }
 
 // Event handling
-addButton.onclick = addTask;
+newTask.addEventListener("enter",addTask);
+addButton.addEventListener("click",addTask);
 
 //remove Items
 

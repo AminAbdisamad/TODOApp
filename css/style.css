@@ -36,6 +36,7 @@ button {
 button:hover {
   color: #333;
 }
+
 /* Heading */
 h3,
 label[for='new-task'] {
@@ -117,4 +118,9 @@ ul li.editMode input[type=text] {
 
 ul li.editMode label {
   display:none;
+}
+
+ #validate{
+  color:red;
+  
 }
