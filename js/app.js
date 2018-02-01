@@ -1,7 +1,7 @@
 //Global variables
 let newTask = document.getElementById("new-task"); // adding new task
 let incompleteTaskHolder = document.getElementById("incomplete-tasks"); // listing tasks that are not complete 
-let addButton = document.getElementsByTagName("button")[0]; // adding task button
+let addButton = document.getElementsByTagName("button")[0];// adding task button
 let completedTaskHolder = document.getElementById("completed-tasks"); // listing completed task
 
 //create new task elements 
@@ -106,7 +106,7 @@ const completedTask = function (){
 }
 
 // Event handling
-newTask.addEventListener("enter",addTask);
+//newTask.addEventListener("enter",addTask);
 addButton.addEventListener("click",addTask);
 
 //remove Items
