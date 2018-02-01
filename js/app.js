@@ -35,14 +35,14 @@ const newTaskElements = function(task){
     listItem.appendChild(input);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
-    //console.log(listItem);
+    
 
     return listItem;
 }
 
 // Adding Tasks to the App
 const addTask = function(){
-    console.log("Add taks ...");
+   
     // calling newTaskElements function
     let listItem = newTaskElements(newTask.value); // TODO: 
     incompleteTaskHolder.appendChild(listItem);
@@ -77,7 +77,7 @@ const deleteTask = function(){
 
 //Incomplete Tasks 
 const taskIncomplete = function(){
-    console.log("task Incomplete ...");
+    
     let list = this.parentNode;
     incompleteTaskHolder.appendChild(list);
     bindEvents(list,completedTask);
@@ -85,7 +85,7 @@ const taskIncomplete = function(){
 //Completed taks
 const completedTask = function (){
 
-    console.log("Complete Task...");
+    
     let list = this.parentNode;
     completedTaskHolder.appendChild(list);
     bindEvents(list,taskIncomplete);
