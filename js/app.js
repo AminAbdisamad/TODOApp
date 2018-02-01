@@ -44,7 +44,7 @@ const newTaskElements = function(task){
 const addTask = function(){
    
     // calling newTaskElements function
-    let listItem = newTaskElements(newTask.value); // TODO: 
+    let listItem = newTaskElements(newTask.value);  
     incompleteTaskHolder.appendChild(listItem);
     bindEvents(listItem,completedTask);
 
