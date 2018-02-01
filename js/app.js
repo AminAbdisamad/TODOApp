@@ -45,6 +45,9 @@ const addTask = function(){
     if(newTask.value === null || newTask.value === ""){
         let err = document.getElementById("validate");
         err.innerText = "Empty tasks cannot be added";
+        setTimeout(()=> err.style.display="none",3000);
+        
+        
     } else{
         // calling newTaskElements function
         let listItem = newTaskElements(newTask.value);  
@@ -52,7 +55,7 @@ const addTask = function(){
         bindEvents(listItem,completedTask);
         
         newTask.value = "";
-        err.innerText = "successfuuly added";
+        //err.innerText = "successfuuly added";
 
     }
     
